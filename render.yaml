@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: line-teacher-reminder
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -w 4 -b 0.0.0.0:$PORT app_simple:app
+    envVars:
+      - key: CHANNEL_1_ACCESS_TOKEN
+        value: oDuJRb/q7oBHUobgLQC/i7/Pg/6Z6EME4/Z7W2h1OrtH0+DAxmsLBeSyvHHn1SViyEe5rHJZqg2o7ZP3RnK/V0aw/uBISldppxPf0GqzUAWGDMPN62nfwfdjBCj0ZG/71uQpqJVQXJ9JYSr0JF0ZQQdB04t89/1O/w1cDnyilFU=
+      - key: CHANNEL_1_SECRET
+        value: cb58ea355a8c2a01259cd1dc33704264
+      - key: CHANNEL_2_ACCESS_TOKEN
+        value: OvwM4sNCR0rVtI8e4EdBeqHLIxAKHg6CiPef66s/g9ONcTRujuGGp5UnUtrLSwvuGjRPxGZiadZfiBL9juCO8IpiK99RAD5NmzCs6pCNt+b+XL1z0JubWAkDnZE++81JOPSSRpxYoZ+p0bdg8p8HXwdB04t89/1O/w1cDnyilFU=
+      - key: CHANNEL_2_SECRET
+        value: 5aba0d7769b5e4468ac1855e78f4e5c8
